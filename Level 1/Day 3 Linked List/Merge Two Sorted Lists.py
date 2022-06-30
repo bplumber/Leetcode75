@@ -68,4 +68,4 @@ class Solution:
             temp.next = list2
             list2 = list2.next
             temp = temp.next
-        return rt.next
+        return rt.next  
