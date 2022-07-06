@@ -6,17 +6,17 @@ class Solution:
         c = len(image[0])
         start = image[sr][sc]
         
-        def hlp(tr, tc, color):
+        def hlp(tr, tc):
             nonlocal r, c, start
             if tr < 0 or tr >= r or tc < 0 or tc >= c:
                 return
             if image[tr][tc]==start:
                 image[tr][tc]=color
-                hlp(tr-1, tc, color)
-                hlp(tr+1, tc, color)
-                hlp(tr, tc+1, color)
-                hlp(tr, tc-1, color)
+                hlp(tr-1, tc)
+                hlp(tr+1, tc)
+                hlp(tr, tc+1)
+                hlp(tr, tc-1)
             else:
                 return
-        hlp(sr, sc, color)
+        hlp(sr, sc)
         return image
